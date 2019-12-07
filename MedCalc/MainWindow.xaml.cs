@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MedCalc;
 
 namespace MedCalc
 {
@@ -20,9 +21,18 @@ namespace MedCalc
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Limit l, l1;
         public MainWindow()
         {
+            var s = Limit.Empty;
+            l = new Limit();
+            l1 = new Limit();
+            
+            l1.ToString();
             InitializeComponent();
+            
+            l = Limit.Empty;
+            btn1.Content = s.IsEmpty().ToString();
         }
     }
 }
