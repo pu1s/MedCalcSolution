@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{86745DC2-5783-47EC-AF91-9A813B545FC0}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>MedCalcLib</RootNamespace>
+    <RootNamespace>MedCalc</RootNamespace>
     <AssemblyName>MedCalcLib</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
