@@ -25,6 +25,8 @@ namespace MedCalc
         public MainWindow()
         {
             var s = Limit.Empty;
+            string ss = string.Empty;
+
             l = new Limit();
             l1 = new Limit();
             
@@ -32,7 +34,7 @@ namespace MedCalc
             InitializeComponent();
             
             l = Limit.Empty;
-            btn1.Content = s.IsEmpty().ToString();
+            btn1.Content = ss;
         }
     }
 }

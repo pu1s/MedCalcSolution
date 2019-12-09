@@ -8,7 +8,7 @@ namespace MedCalc
 {
     public class Limit : IEquatable<Limit>
     {
-        public static readonly Limit Empty = new Limit();
+        public static readonly Limit Empty;
         public string LimitName { get; private set; }
         private readonly int _hashCode;
         public Limit()
@@ -51,6 +51,8 @@ namespace MedCalc
                  "Lower Value: " + Lower.ToString() + '\n' +
                  "Upper Value: " + Upper.ToString() + '\n';
         }
+
+        
 
         public override bool Equals(object obj)
         {
