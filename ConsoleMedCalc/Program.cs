@@ -27,8 +27,13 @@ namespace ConsoleMedCalc
         public async void GetEmptyLimit()
         {
             MedicalProcedures mp = new MedicalProcedures();
-            var t = await mp.IndexBodyMassAsync(10, 20, new Limit("a", 0, 100), new Limit("b", 0, 200));
-            Console.WriteLine(t.ToString());
+            for(int i = 1; i<10; i++)
+            {
+                var t = await mp.IndexBodyMassAsync(i+1, i*i, new Limit("a", 0, 100), new Limit("b", 0, 200));
+                Console.WriteLine(t.ToString());
+            }
+            
+            
         }
     }
 }

@@ -15,12 +15,8 @@ namespace MedCalc
             return res;
         }
 
-//#pragma warning disable CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
-        public async Task<float> IndexBodyMassAsync(float weight,
-//#pragma warning restore CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
-                                                    float height,
-                                                    Limit limitWeight,
-                                                    Limit limitHeight)
+
+        public async Task<float> IndexBodyMassAsync(float weight, float height, Limit limitWeight, Limit limitHeight)
         {
            var t = new Task<float>(() =>
             {
