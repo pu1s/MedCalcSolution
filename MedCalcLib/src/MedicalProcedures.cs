@@ -8,18 +8,26 @@ namespace MedCalc
 {
     public partial class MedicalProcedures
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="wight"></param>
-        /// <param name="hieght"></param>
-        /// <param name="limitWigth"></param>
-        /// <param name="limitHieght"></param>
-        /// <param name="callbackAction"></param>
-        public float IndexBodyMass(float wight, float hieght, ref Limit limitWigth,  ref Limit limitHieght, Action callbackAction)
+       
+        public float IndexBodyMass(float weight, float height, Limit limitWeight,  Limit limitHeight)
         {
+            var res = weight / (height * height);
+            return res;
+        }
 
-            return 0f;
+//#pragma warning disable CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
+        public async Task<float> IndexBodyMassAsync(float weight,
+//#pragma warning restore CS1998 // В асинхронном методе отсутствуют операторы await, будет выполнен синхронный метод
+                                                    float height,
+                                                    Limit limitWeight,
+                                                    Limit limitHeight)
+        {
+           var t = new Task<float>(() =>
+            {
+                return IndexBodyMass(weight, height, limitWeight, limitHeight);
+            });
+            t.Start();
+            return t.Result;
         }
     }
 }
