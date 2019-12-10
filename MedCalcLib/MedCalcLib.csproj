@@ -52,7 +52,9 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Limit.cs" />
+    <Compile Include="src\Limit.cs" />
+    <Compile Include="src\LimitException.cs" />
+    <Compile Include="src\MedicalProcedures.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

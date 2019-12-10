@@ -24,17 +24,9 @@ namespace MedCalc
         public Limit l, l1;
         public MainWindow()
         {
-            var s = Limit.Empty;
-            string ss = string.Empty;
-
-            l = new Limit();
-            l1 = new Limit();
             
-            l1.ToString();
             InitializeComponent();
-            
-            l = Limit.Empty;
-            btn1.Content = ss;
+           
         }
     }
 }

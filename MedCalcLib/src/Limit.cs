@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace MedCalc
 {
+    #region Limit
+    /// <summary>
+    /// 
+    /// </summary>
     public class Limit : IEquatable<Limit>
     {
-        public static readonly Limit Empty;
+        public static readonly Limit Empty = new Limit();
         public string LimitName { get; private set; }
         private readonly int _hashCode;
         public Limit()
@@ -26,6 +30,10 @@ namespace MedCalc
         }
         public float Lower { get; private set; }
         public float Upper { get; private set; }
+        public bool IsTry()
+        {
+            return (Lower < Upper) && (Lower != 0f || Upper != 0f);
+        }
         public bool IsEmpty()
         {
             return (Lower == 0f && Upper == 0f) && (Lower == Upper);
@@ -33,7 +41,7 @@ namespace MedCalc
 
         private static int GenerateHashCode()
         {
-            return DateTime.Now.Millisecond * DateTime.Now.Minute * DateTime.Now.Hour;
+            return DateTime.Now.Millisecond * DateTime.Now.Minute * DateTime.Now.Hour * DateTime.Now.Day;
         }
         public override int GetHashCode()
         {
@@ -52,7 +60,7 @@ namespace MedCalc
                  "Upper Value: " + Upper.ToString() + '\n';
         }
 
-        
+
 
         public override bool Equals(object obj)
         {
@@ -68,4 +76,5 @@ namespace MedCalc
                    Upper == other.Upper;
         }
     }
+    #endregion
 }
