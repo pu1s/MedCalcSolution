@@ -30,11 +30,13 @@ namespace MedCalc
         }
         public float Lower { get; private set; }
         public float Upper { get; private set; }
-        public bool IsTry()
+        public bool IsTry => _IsTry();
+        public bool IsEmpty => _IsEmpty();
+        private bool _IsTry()
         {
             return (Lower < Upper) && (Lower != 0f || Upper != 0f);
         }
-        public bool IsEmpty()
+        private bool _IsEmpty()
         {
             return (Lower == 0f && Upper == 0f) && (Lower == Upper);
         }

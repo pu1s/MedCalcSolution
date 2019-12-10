@@ -24,12 +24,12 @@ namespace ConsoleMedCalc
     {
         public Limit limit1;
 
-        public async void GetEmptyLimit()
+        public  void GetEmptyLimit()
         {
             MedicalProcedures mp = new MedicalProcedures();
             for(int i = 1; i<10; i++)
             {
-                var t = await mp.IndexBodyMassAsync(i+1, i*i, new Limit("a", 0, 100), new Limit("b", 0, 200));
+                var t =  mp.IndexBodyMassAsync(i+1, i*i, new Limit("a", 0, 100), new Limit("b", 0, 200));
                 Console.WriteLine(t.ToString());
             }
             
