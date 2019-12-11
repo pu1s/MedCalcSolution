@@ -10,11 +10,13 @@ namespace MedCalc
     /// <summary>
     /// 
     /// </summary>
+    [DefaultLimit]
     public class Limit : IEquatable<Limit>
     {
         public static readonly Limit Empty = new Limit();
         public string LimitName { get; private set; }
         private readonly int _hashCode;
+
         public Limit()
         {
             _hashCode = GenerateHashCode();
@@ -22,19 +24,25 @@ namespace MedCalc
             Lower = 0f;
             Upper = 0f;
         }
+
         public Limit(string limitName = "", float lower = 0.0f, float upper = 0.0f) : this()
         {
             LimitName = limitName;
             Lower = lower;
             Upper = upper;
         }
+
         public float Lower { get; private set; }
         public float Upper { get; private set; }
-        public bool IsTry()
+        public bool IsTry => IsTryExamination();
+        public bool IsEmpty => IsTryExamination();
+
+        private bool IsTryExamination()
         {
             return (Lower < Upper) && (Lower != 0f || Upper != 0f);
         }
-        public bool IsEmpty()
+
+        private bool IsEmptyExamination()
         {
             return (Lower == 0f && Upper == 0f) && (Lower == Upper);
         }
@@ -43,6 +51,7 @@ namespace MedCalc
         {
             return DateTime.Now.Millisecond * DateTime.Now.Minute * DateTime.Now.Hour * DateTime.Now.Day;
         }
+
         public override int GetHashCode()
         {
             return _hashCode;
@@ -74,6 +83,13 @@ namespace MedCalc
                    _hashCode == other._hashCode &&
                    Lower == other.Lower &&
                    Upper == other.Upper;
+        }
+    }
+
+    public class DefaultLimitAttribute : Attribute
+    {
+        public DefaultLimitAttribute()
+        {
         }
     }
     #endregion
