@@ -8,39 +8,45 @@ namespace MedCalc
 {
     public partial class MedicalProcedures
     {
-
+        
+         
+      public enum MedicalProcErrorCode : int
+        {
+            PROC_FAILED     = -0x001,
+            PROC_SUCCESSFUL = 0x000,
+            PROC_ERR_LIMIT  = 0x002,
+            PROC_ERR_RANGE  = 0x004,
+            PROC_ERR_AGRS   = 0x008,
+        }
         public float IndexBodyMass(float weight, float height, Limit limitWeight, Limit limitHeight)
         {
-            const float FAILED = -1f;
-            if(!limitWeight.IsTry && !limitHeight.IsTry) return FAILED;
-            if(weight> limitWeight.Upper && weight < limitWeight.Lower) return FAILED;
-            if (height > limitHeight.Upper && height < limitHeight.Lower) return FAILED;
+            if(!limitWeight.IsTry && !limitHeight.IsTry) return (float)MedicalProcErrorCode.PROC_FAILED;
+            if(weight> limitWeight.Upper && weight < limitWeight.Lower) return (float)MedicalProcErrorCode.PROC_FAILED;
+            if (height > limitHeight.Upper && height < limitHeight.Lower) return (float)MedicalProcErrorCode.PROC_FAILED;
             return weight / (height * height);
         }
 
         public float IndexBodyMass(float weight, float height, Limit limitWeight, Limit limitHeight, ref int errorCode)
         {
-            const float FAILED = -1f;
-            const int ERROR_LIMIT = 0x000;
-            const int ERROR_RANGE = 0x001;
-            const int ERROR_ARGUM = 0x002;
+            
             if (weight == 0 || height == 0)
             {
-                errorCode = ERROR_ARGUM;
-                return FAILED;
+                errorCode = (int)MedicalProcErrorCode.PROC_ERR_AGRS;
+                return (float)MedicalProcErrorCode.PROC_FAILED;
             }
             if (!limitWeight.IsTry && !limitHeight.IsTry) 
             { 
-                errorCode = ERROR_LIMIT; 
-                return FAILED; 
+                errorCode = (int)MedicalProcErrorCode.PROC_ERR_LIMIT;
+                return (float)MedicalProcErrorCode.PROC_FAILED;
             }
             if (weight > limitWeight.Upper && weight < limitWeight.Lower)
             {
-                errorCode = ERROR_RANGE;
-                return FAILED;
+                errorCode = (int)MedicalProcErrorCode.PROC_ERR_RANGE;
+                return (float)MedicalProcErrorCode.PROC_FAILED;
             }
 
-            if (height > limitHeight.Upper && height < limitHeight.Lower) return FAILED;
+            if (height > limitHeight.Upper && height < limitHeight.Lower) return (float)MedicalProcErrorCode.PROC_FAILED;
+            else
             return weight / (height * height);
         }
 
