@@ -14,6 +14,7 @@ namespace ConsoleMedCalc
             actionNew.GetEmptyLimit();
 
             Console.WriteLine("Hello World!");
+            Console.ReadLine();
         }
 
         
@@ -23,14 +24,16 @@ namespace ConsoleMedCalc
     {
         public Limit limit1;
 
-        public void GetEmptyLimit()
+        public  void GetEmptyLimit()
         {
-            limit1 = Limit.Empty;
-            limit1 = new Limit("Up", 0, 10);
-            var a = limit1.IsTry;
-            MedicalProcedures ass = new MedicalProcedures();
-            var m = ass.IndexBodyMassAsync(10, 20, new Limit("aa", 0, 25), new Limit("dw", 0, 26)).Result;
-            Console.WriteLine(m.ToString());
+            MedicalProcedures mp = new MedicalProcedures();
+            for(int i = 1; i<10; i++)
+            {
+                var t =  mp.IndexBodyMassAsync(i+1, i*i, new Limit("a", 0, 100), new Limit("b", 0, 200));
+                Console.WriteLine(t.ToString());
+            }
+            
+            
         }
     }
 }
