@@ -19,7 +19,7 @@ namespace ConsoleMedCalc
         {
             public static async void Go()
             {
-                float a = await MedProc.IndexBodyMassAsync(1, 10);
+                float a =  await Calculator.IndexBodyMassAsync(10, new NamedLimit(new Limit(0, 100)), 100, new NamedLimit(new Limit(0,200)), 0);
                 Console.WriteLine(a);
             }
         }
