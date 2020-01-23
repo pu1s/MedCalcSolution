@@ -6,28 +6,14 @@ namespace ConsoleMedCalc
     class Program
     {
 
-        
-
         static void Main(string[] args)
         {
-            ActionNew actionNew = new ActionNew();
-            actionNew.GetEmptyLimit();
-
+            Limit l = new Limit();
+            Limit l1 = new Limit(0, 1);
             Console.WriteLine("Hello World!");
             Console.ReadLine();
         }
-
-        
+ 
     }
-
-    public class ActionNew
-    {
-        public Limit limit1;
-
-        public  void GetEmptyLimit()
-        {
-            limit1 = Limit.Empty;
-            Console.WriteLine(limit1.ToString());
-        }
-    }
+  
 }

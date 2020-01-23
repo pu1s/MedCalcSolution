@@ -6,77 +6,50 @@ using System.Threading.Tasks;
 
 namespace MedCalc
 {
-    #region Limit
     /// <summary>
-    /// 
+    /// Предел
     /// </summary>
-    public class Limit : IEquatable<Limit>
+    public class Limit
     {
-        public static readonly Limit Empty = new Limit();
-        public string LimitName { get; private set; }
-        private readonly int _hashCode;
+        /// <summary>
+        /// Нижний предел
+        /// </summary>
+        public float Lower { get; private set; }
+
+        /// <summary>
+        /// Верхний предел
+        /// </summary>
+        public float Upper { get; private set; }
+
+        /// <summary>
+        /// Создает новый предел
+        /// </summary>
         public Limit()
         {
-            _hashCode = GenerateHashCode();
-            LimitName = string.Empty;
-            Lower = 0f;
-            Upper = 0f;
+            Lower = 0.0f;
+            Upper = 0.0f;
         }
-        public Limit(string limitName = "", float lower = 0.0f, float upper = 0.0f) : this()
+
+        /// <summary>
+        /// Создает новый предел
+        /// </summary>
+        /// <param name="lower">Нижний предел</param>
+        /// <param name="upper">Верхний предел</param>
+        public Limit(float lower, float upper)
         {
-            LimitName = limitName;
+            if (lower > upper) throw new ArgumentOutOfRangeException(@"Неверно указан входной параметр!");
             Lower = lower;
             Upper = upper;
         }
-        public float Lower { get; private set; }
-        public float Upper { get; private set; }
-        public bool IsTry => _IsTry();
-        public bool IsEmpty => _IsEmpty();
-        private bool _IsTry()
-        {
-            return (Lower < Upper) && (Lower != 0f || Upper != 0f);
-        }
-        private bool _IsEmpty()
-        {
-            return (Lower == 0f && Upper == 0f) && (Lower == Upper);
-        }
 
-        private static int GenerateHashCode()
-        {
-            return DateTime.Now.Millisecond * DateTime.Now.Minute * DateTime.Now.Hour * DateTime.Now.Day;
-        }
-        public override int GetHashCode()
-        {
-            return _hashCode;
-        }
-        public static bool operator ==(Limit left, Limit right) => left.GetHashCode() == right.GetHashCode();
+        /// <summary>
+        /// Пустой предел
+        /// </summary>
+        public static readonly Limit Empty = new Limit();
 
-        public static bool operator !=(Limit left, Limit right) => left.GetHashCode() != right.GetHashCode();
-
-        public override string ToString()
-        {
-            return
-                 "Limit Name: " + LimitName + '\n' +
-                 "Limit Hash Code: " + GetHashCode().ToString() + '\n' +
-                 "Lower Value: " + Lower.ToString() + '\n' +
-                 "Upper Value: " + Upper.ToString() + '\n';
-        }
-
-
-
-        public override bool Equals(object obj)
-        {
-            return Equals(obj as Limit);
-        }
-
-        public bool Equals(Limit other)
-        {
-            return other != null &&
-                   LimitName == other.LimitName &&
-                   _hashCode == other._hashCode &&
-                   Lower == other.Lower &&
-                   Upper == other.Upper;
-        }
+        /// <summary>
+        /// Определяет пустой-ли предел
+        /// </summary>
+        public bool IsEmpty => this.Upper == 0.0f && this.Lower == 0.0f;
     }
-    #endregion
 }
