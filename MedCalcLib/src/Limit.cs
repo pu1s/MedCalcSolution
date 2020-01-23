@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MedCalc
 {
+    #region Пределы
     /// <summary>
     /// Предел
     /// </summary>
@@ -52,4 +53,7 @@ namespace MedCalc
         /// </summary>
         public bool IsEmpty => this.Upper == 0.0f && this.Lower == 0.0f;
     }
+
+#endregion
+
 }

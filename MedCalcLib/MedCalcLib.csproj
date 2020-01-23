@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\Limit.cs" />
+    <Compile Include="src\MedProc.cs" />
+    <Compile Include="src\NamedLimit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
