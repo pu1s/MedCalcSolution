@@ -10,13 +10,14 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
+            
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Индекс массы тела"></Label>
+        <!--<Label Grid.Row="0" Grid.Column="1" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Индекс массы тела"></Label>-->
+        <local:IndexBodyMassControl Grid.Column="1" Grid.Row="1" Title="Индекс массы тела"></local:IndexBodyMassControl>
     </Grid>
 </Page>
