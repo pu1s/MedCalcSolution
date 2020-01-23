@@ -12,28 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MedCalc;
 
 namespace MedCalc
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для PageIndexBodyMass.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageIndexBodyMass : Page
     {
-        public Limit l, l1;
-
-        private void btn_Click(object sender, RoutedEventArgs e)
+        public PageIndexBodyMass()
         {
-            PageIndexBodyMass pageIndexBodyMass = new PageIndexBodyMass();
-            this.Content = pageIndexBodyMass;
-        }
-
-        public MainWindow()
-        {
-            
             InitializeComponent();
-           
         }
     }
 }

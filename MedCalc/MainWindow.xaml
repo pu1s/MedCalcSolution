@@ -15,23 +15,7 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn1" Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="572" Height="299" Grid.Column="1" Grid.Row="1"/>
-        <Image x:Name="MainWindowImg" Grid.Row="0" Grid.Column="0" Source="Standard_World_Time_Zones.png"></Image>
-        <Rectangle x:Name="CanvPanel" Grid.Column="1" Grid.Row="0" Stroke="#FF3A0735" StrokeThickness="2">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Azure" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-               
-            </Rectangle.Fill>
-
-        </Rectangle>
-        <Canvas>
-            
-        </Canvas>
-        <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
-            <Button.Content>AAA</Button.Content>
-        </Button>
+        <Button x:Name="btn" Content="Click" Click="btn_Click"></Button>
+        <Frame Grid.Row="1" Grid.Column="1" Source="/MedCalc;component/PageIndexBodyMass.xaml"></Frame>
     </Grid>
 </Window>
