@@ -5,17 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedCalc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Height="450" Width="800" Style="{StaticResource MainWindowStyle}">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn" Content="Click" Click="btn_Click"></Button>
+        <Grid Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" x:Name="MainMenuColumn">
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Margin="5" Padding="5" BorderBrush="#FF030D4B" BorderThickness="0,0,1,0" >
+                <StackPanel x:Name="MainMenuStack" Grid.Column="0" Grid.Row="0">
+                    <Button x:Name="MainBtn" Content="Главное" Height="50" Style="{DynamicResource MainMenuButtonStyle}"></Button>
+                    <Button x:Name="IBMBtn" Content="Индекс массы тела" Height="50" Style="{DynamicResource ButtonStyle1}"></Button>
+                </StackPanel>
+            </Border>
+            
+        </Grid>
         <Frame Grid.Row="1" Grid.Column="1" Source="/MedCalc;component/PageIndexBodyMass.xaml"></Frame>
     </Grid>
 </Window>
