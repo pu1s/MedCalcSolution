@@ -7,12 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="104"/>
+            <ColumnDefinition Width="673*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Border BorderThickness="0,0,0,1" Margin="5" Padding="5" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
-        <Label x:Name="TitleLabel" Grid.Column="0" Grid.Row="0" Content="{Binding Title, ElementName=userControl}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SnapsToDevicePixels="True" FontSize="16"  ></Label>
+        <Border BorderThickness="0,0,0,1" Margin="5" Padding="5" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Grid.ColumnSpan="4">
+            <Label x:Name="TitleLabel" Grid.Column="0" Grid.Row="0" Content="{Binding Title, ElementName=userControl}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SnapsToDevicePixels="True" FontSize="16"  ></Label>
         </Border>
+        <Border Grid.Row="1" Grid.Column="1" Padding="10" Margin="10" BorderThickness="1" CornerRadius="5" Grid.ColumnSpan="2"></Border>
     </Grid>
 </UserControl>
