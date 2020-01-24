@@ -20,9 +20,25 @@ namespace MedCalcTest
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         public MainWindow()
         {
             InitializeComponent();
+
+            
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void txtBox_MouseLeave(object sender, MouseEventArgs e)
+        {
+            //UpdateLayout();
+            var al = AdornerLayer.GetAdornerLayer(txtBox);
+            if (al == null) return;
+            al.Add(new MedCalc.WatermarkAdorner(txtBox));
         }
     }
 }
