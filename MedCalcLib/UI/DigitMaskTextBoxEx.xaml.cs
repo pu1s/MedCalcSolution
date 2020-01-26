@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MedCalc.UI
 {
     /// <summary>
-    /// Логика взаимодействия для WatermarkTextBox.xaml
+    /// Логика взаимодействия для DigitMaskTextBoxEx.xaml
     /// </summary>
-    public partial class WatermarkTextBox : UserControl
+    public partial class DigitMaskTextBoxEx : UserControl
     {
-        public WatermarkTextBox()
+        public DigitMaskTextBoxEx()
         {
             InitializeComponent();
         }

@@ -12,27 +12,35 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MedCalc.UI;
 
-namespace MedCalcTest
+namespace MedCalc.UI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для uc.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class uc : UserControl
     {
-       
-        public MainWindow()
+        public uc()
         {
             InitializeComponent();
-
-            
+            conner = new Conner();
+            conner.Control = this;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private Conner conner;
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            var visualHost = new MyVisualHost();
-            MyCanvas.Children.Add(visualHost);
+            
+            
+            Canv.Children.Add(conner);
+            
+            
+        }
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+
+            conner.ToDo();
+
         }
     }
 }

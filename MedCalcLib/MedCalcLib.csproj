@@ -59,19 +59,50 @@
     <Compile Include="src\Limit.cs" />
     <Compile Include="src\Calculator.cs" />
     <Compile Include="src\NamedLimit.cs" />
+    <Compile Include="UI\Conner.cs" />
+    <Compile Include="UI\DigitMaskTextBox.xaml.cs">
+      <DependentUpon>DigitMaskTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DigitMaskTextBoxEx.xaml.cs">
+      <DependentUpon>DigitMaskTextBoxEx.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UC.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>uc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VisHost.cs" />
+    <Compile Include="UI\WatermarkMaskTextBoxControl.xaml.cs">
+      <DependentUpon>WatermarkMaskTextBoxControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\WatermarkTextBox.xaml.cs">
       <DependentUpon>WatermarkTextBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\WatermarkTextBoxEx.xaml.cs">
-      <DependentUpon>WatermarkTextBoxEx.xaml</DependentUpon>
+    <Compile Include="UI\WatrmarkMaskTextBox.xaml.cs">
+      <DependentUpon>WatrmarkMaskTextBox.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="UI\DigitMaskTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DigitMaskTextBoxEx.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\uc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\WatermarkMaskTextBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\WatermarkTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\WatermarkTextBoxEx.xaml">
+    <Page Include="UI\WatrmarkMaskTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
