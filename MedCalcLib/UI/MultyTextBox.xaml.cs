@@ -12,26 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MedCalc.UI;
 
-namespace MedCalcTest
+namespace MedCalc.UI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MultyTextBox.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MultyTextBox : UserControl
     {
-       
-        public MainWindow()
+        public MultyTextBox()
         {
             InitializeComponent();
-
-            
-        }
-
-        private void WMT_GotFocus(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

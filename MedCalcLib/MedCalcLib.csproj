@@ -66,11 +66,9 @@
     <Compile Include="UI\DigitMaskTextBoxEx.xaml.cs">
       <DependentUpon>DigitMaskTextBoxEx.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\UC.xaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>uc.xaml</DependentUpon>
+    <Compile Include="UI\MultyTextBox.xaml.cs">
+      <DependentUpon>MultyTextBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\VisHost.cs" />
     <Compile Include="UI\WatermarkMaskTextBoxControl.xaml.cs">
       <DependentUpon>WatermarkMaskTextBoxControl.xaml</DependentUpon>
     </Compile>
@@ -90,7 +88,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\uc.xaml">
+    <Page Include="UI\MultyTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
