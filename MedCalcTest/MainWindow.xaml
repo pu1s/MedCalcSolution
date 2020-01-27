@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="A1" Style="{DynamicResource D1}">text</TextBox>
+        <GUI:DigitMaskTextBox Height="50" Width="250"/>
     </Grid>
     <Window.Resources>
         <Style x:Key="D1" TargetType="{x:Type TextBox}">
@@ -19,16 +19,16 @@
                     <ControlTemplate>
                         <Grid>
                             <TextBox x:Name="WMK" Margin="10" Foreground="Blue" Text="000-00" Focusable="False" SnapsToDevicePixels="True" FontSize="30" FontWeight="Bold"/>
-                            <!--<TextBox x:Name="WMT" Margin="10" Foreground="IndianRed" Text="000" Background="{x:Null}" SnapsToDevicePixels="True" FontWeight="Bold" FontSize="30" GotFocus="WMT_GotFocus"/>-->
+                            <TextBox x:Name="WMT" Margin="10" Foreground="IndianRed" Text="000" Background="{x:Null}" SnapsToDevicePixels="True" FontWeight="Bold" FontSize="30" GotFocus="WMT_GotFocus"/>
                         </Grid>
-                        <!--<ControlTemplate.Triggers>
+                        <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Trigger.Setters>
                                     <Setter TargetName="WMK" Property="TextBox.Foreground" Value="Green"/>
                                 </Trigger.Setters>
                             </Trigger>
                             
-                        </ControlTemplate.Triggers>-->
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
