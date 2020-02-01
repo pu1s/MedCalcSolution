@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MedCalc.UI;
+//using MedCalc.UI;
 
 namespace MedCalcTest
 {
@@ -29,9 +29,6 @@ namespace MedCalcTest
             
         }
 
-        private void WMT_GotFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

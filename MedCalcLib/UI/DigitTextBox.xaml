@@ -1,0 +1,19 @@
+﻿<UserControl x:Name="userControl" x:Class="MedCalc.UI.DigitTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MedCalc.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="35" 
+             d:DesignWidth="200" 
+             SnapsToDevicePixels="True"
+             MinHeight="35"
+             MinWidth="35"
+             FontFamily="Segoe UI Black"
+             MaxHeight="35">
+    <Grid>
+        <TextBox x:Name="L_Mask" FontFamily="Segoe UI Black" FontSize="24" Text="{Binding Mask, ElementName=userControl}" BorderBrush="{x:Null}" Focusable="False" Foreground="#FF999999"/>
+        <TextBox x:Name="L_Text" FontFamily="Segoe UI Black" FontSize="24" Text="{Binding Text, ElementName=userControl}" Background="{x:Null}"/>
+    </Grid>
+</UserControl>
