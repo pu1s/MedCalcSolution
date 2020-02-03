@@ -62,9 +62,16 @@
     <Compile Include="UI\DigitTextBox.xaml.cs">
       <DependentUpon>DigitTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\LabledDigitTextBox.xaml.cs">
+      <DependentUpon>LabledDigitTextBox.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="UI\DigitTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\LabledDigitTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

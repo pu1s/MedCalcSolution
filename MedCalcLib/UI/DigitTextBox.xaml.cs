@@ -49,6 +49,9 @@ namespace MedCalc.UI
         public static readonly DependencyProperty MaskProperty =
             DependencyProperty.Register("Mask", typeof(string), typeof(DigitTextBox), new PropertyMetadata("000,00"));
 
+        private void LAYER_Text_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
     }
 }
