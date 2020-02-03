@@ -5,26 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedCalc"
         mc:Ignorable="d"
-        Height="450" Width="800" Style="{StaticResource MainWindowStyle}">
+        Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="30" x:Name="MainMenuColumn" />
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" x:Name="MainMenuColumn">
-            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Margin="5" Padding="5" BorderBrush="#FF030D4B" BorderThickness="0,0,1,0" >
-                <StackPanel x:Name="MainMenuStack" Grid.Column="0" Grid.Row="0">
-                    <Button x:Name="MainBtn" Content="Главное" Height="50" Style="{DynamicResource MainMenuButtonStyle}"></Button>
-                    <Button x:Name="IBMBtn" Content="Индекс массы тела" Height="50" Style="{DynamicResource ButtonStyle1}"></Button>
-                </StackPanel>
-            </Border>
-            
+        <StackPanel x:Name="MainMenuStackPanel" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" >
+            <Button x:Name="MainMenuMainButton" Height="30">
+                
+            </Button>
+            <Button x:Name="IBMMenuMainButton" Height="30" Content="IBM">
+
+            </Button>
+        </StackPanel>
+        <Grid x:Name="ContextGrid" Grid.Column="1">
+            <Frame Source="/MedCalc;component/IndexBodyMassPage.xaml" NavigationUIVisibility="Hidden" ></Frame>
         </Grid>
-        <Frame Grid.Row="1" Grid.Column="1" Source="/MedCalc;component/PageIndexBodyMass.xaml"></Frame>
     </Grid>
 </Window>

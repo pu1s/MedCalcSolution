@@ -8,8 +8,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <GUI:DigitTextBox></GUI:DigitTextBox>
-        
+        <!--<GUI:DigitTextBox></GUI:DigitTextBox>-->
+        <GUI:LabledDigitTextBox Text="000">
+            <GUI:LabledDigitTextBox.LabelText>
+                DDDD
+            </GUI:LabledDigitTextBox.LabelText>
+        </GUI:LabledDigitTextBox>
     </Grid>
    
         

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace MedCalc
 {
     /// <summary>
-    /// Логика взаимодействия для PageIndexBodyMass.xaml
+    /// Логика взаимодействия для IndexBodyMassPage.xaml
     /// </summary>
-    public partial class PageIndexBodyMass : Page
+    public partial class IndexBodyMassPage : Page
     {
-        public PageIndexBodyMass()
+        public IndexBodyMassPage()
         {
             InitializeComponent();
         }

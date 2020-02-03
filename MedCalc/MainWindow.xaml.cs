@@ -21,14 +21,7 @@ namespace MedCalc
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Limit l, l1;
-
-        private void btn_Click(object sender, RoutedEventArgs e)
-        {
-            PageIndexBodyMass pageIndexBodyMass = new PageIndexBodyMass();
-            this.Content = pageIndexBodyMass;
-        }
-
+        
         public MainWindow()
         {
             

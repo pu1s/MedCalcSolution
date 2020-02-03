@@ -32,10 +32,11 @@
         
         <TextBox x:Name="LAYER_Text" 
                  FontFamily="{DynamicResource Digit.TextBox.FontFamily}" 
-                 FontSize="24" Text="{Binding Text, ElementName=userControl}" 
-                 Background="{x:Null}"
+                 FontSize="24" 
+                 Background="{DynamicResource Digit.Border.Brush.Transperent}"
                  TextChanged="LAYER_Text_TextChanged"
                  Focusable="True"
-                 SnapsToDevicePixels="True"/>
+                 SnapsToDevicePixels="True"
+                 Text="{Binding Text, ElementName=userControl}" />
     </Grid>
 </UserControl>

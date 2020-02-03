@@ -24,5 +24,31 @@ namespace MedCalc.UI
         {
             InitializeComponent();
         }
+
+
+
+        public string LabelText
+        {
+            get { return (string)GetValue(LabelTextProperty); }
+            set { SetValue(LabelTextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for LabelText.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LabelTextProperty =
+            DependencyProperty.Register("LabelText", typeof(string), typeof(LabledDigitTextBox), new PropertyMetadata("Label"));
+
+
+
+        public string Text
+        {
+            get { return (string)GetValue(TextProperty); }
+            set { SetValue(TextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Text.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TextProperty =
+            DependencyProperty.Register("Text", typeof(string), typeof(LabledDigitTextBox), new PropertyMetadata(""));
+
+
     }
 }
