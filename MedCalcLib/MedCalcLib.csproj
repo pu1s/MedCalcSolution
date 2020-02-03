@@ -56,6 +56,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\IndexBodyMass.cs" />
     <Compile Include="src\Limit.cs" />
     <Compile Include="src\Calculator.cs" />
     <Compile Include="src\NamedLimit.cs" />

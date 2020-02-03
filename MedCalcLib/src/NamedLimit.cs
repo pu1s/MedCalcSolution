@@ -1,13 +1,9 @@
 ﻿using System;
 
 namespace MedCalc
-{
-  
-
+{ 
     #region Именованный предел
-    
-
-    
+  
     public class NamedLimit
     {
         public Limit Limit { get; private set; }
@@ -17,6 +13,7 @@ namespace MedCalc
         
         public NamedLimit()
         {
+            
             Limit = new Limit();
             Name = "Unnamed";
             Key = InitKey();
@@ -29,9 +26,16 @@ namespace MedCalc
             if(!string.IsNullOrEmpty(name)) Name = name;
         }
 
+        
         public NamedLimit(float lower, float upper, string name = "") : this(new Limit(lower, upper), name)
         {
-
+            float lval, uval;
+            var type = typeof(NamedLimit).GetCustomAttributes(false);
+            foreach (LimitDataAttribute attr in type)
+            {
+                lval = attr.LowerValue;
+                uval = attr.UpperValue;
+            }
         }
 
         private static long InitKey()
@@ -53,4 +57,26 @@ namespace MedCalc
         }
     }
     #endregion
+
+    public class LimitDataAttribute : Attribute
+    {
+        public LimitDataAttribute()
+        {
+            _defaultLowerValue = 0;
+            _defaultUpperValue = 0;
+        }
+
+        public LimitDataAttribute(float lowerValue = 0, float upperValue = 100) : this()
+        {
+            _defaultLowerValue = lowerValue;
+            _defaultUpperValue = upperValue;
+        }
+        private float _defaultLowerValue;
+
+        private float _defaultUpperValue;
+
+        public float LowerValue => _defaultLowerValue;
+
+        public float UpperValue => _defaultUpperValue;
+    }
 }
