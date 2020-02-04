@@ -12,23 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-//using MedCalc.UI;
 
-namespace MedCalcTest
+namespace MedCalc.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для PageIndexBodyMass.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageIndexBodyMass : Page
     {
-       
-        public MainWindow()
+        public PageIndexBodyMass()
         {
             InitializeComponent();
-            AAA.Text = a.ToString();
-            
         }
-
-        int a = 10;
     }
 }

@@ -29,5 +29,15 @@ namespace MedCalc
             WieghtLimit = wieghtLimit;
             HieghtLimit = hieghtLimit;
         }
+
+        public IndexBodyMassData(string wieght, float wieghtLimitLower, float wieghtLimitUpper, string hieght, float hieghtLimitLower, float hieghtLimitUpper)
+        {
+            if (string.IsNullOrEmpty(wieght)) throw new ArgumentNullException(@"Параметр не указан!");
+            if (string.IsNullOrEmpty(hieght)) throw new ArgumentNullException(@"Параметр не указан!");
+            Wieght = float.Parse(wieght);
+            Hieght = float.Parse(hieght);
+            WieghtLimit = new Limit(wieghtLimitLower, wieghtLimitUpper);
+            HieghtLimit = new Limit(hieghtLimitLower, hieghtLimitUpper);
+        }
     }
 }

@@ -7,20 +7,14 @@
         mc:Ignorable="d"
         Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30" x:Name="MainMenuColumn" />
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel x:Name="MainMenuStackPanel" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" >
-            <Button x:Name="MainMenuMainButton" Height="30">
-                
-            </Button>
-            <Button x:Name="IBMMenuMainButton" Height="30" Content="IBM">
-
-            </Button>
-        </StackPanel>
-        <Grid x:Name="ContextGrid" Grid.Column="1">
-            <Frame Source="/MedCalc;component/IndexBodyMassPage.xaml" NavigationUIVisibility="Hidden" ></Frame>
-        </Grid>
+        <Frame Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden" Source="/MedCalc;component/Views/PageIndexBodyMass.xaml"/>
     </Grid>
 </Window>

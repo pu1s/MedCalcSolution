@@ -8,12 +8,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <!--<GUI:DigitTextBox></GUI:DigitTextBox>-->
-        <GUI:LabledDigitTextBox Text="000">
-            <GUI:LabledDigitTextBox.LabelText>
-                DDDD
-            </GUI:LabledDigitTextBox.LabelText>
-        </GUI:LabledDigitTextBox>
+        <TextBox Height="28" x:Name="AAA">
+            <TextBox.Text>
+                <Binding Path="a">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
     </Grid>
    
         

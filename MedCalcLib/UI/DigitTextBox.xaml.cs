@@ -26,6 +26,7 @@ namespace MedCalc.UI
         }
 
 
+        private Brush tmpBrush;
 
         public string Text
         {
@@ -51,7 +52,29 @@ namespace MedCalc.UI
 
         private void LAYER_Text_TextChanged(object sender, TextChangedEventArgs e)
         {
+            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex("[0-9][,.]");
+               
+               if(regex.IsMatch(Text))
+                {
+                    //throw new ArgumentException(@"Ошибка ввода!");
+                }
+           
+        }
 
+        private void LAYER_Text_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tmpBrush  = LAYER_Mask.Foreground;
+            LAYER_Mask.Foreground = SystemColors.ControlLightBrush;
+        }
+
+        private void LAYER_Text_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (LAYER_Text.Text.Length == 0) LAYER_Mask.Foreground = tmpBrush;
+        }
+
+        private void LAYER_Mask_Error(object sender, ValidationErrorEventArgs e)
+        {
+            
         }
     }
 }

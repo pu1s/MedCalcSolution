@@ -16,7 +16,7 @@
     <UserControl.Resources>
         <SolidColorBrush x:Key="Digit.Text.Brush" Color="#FF999999"/>
         <SolidColorBrush x:Key="Digit.Border.Brush.Transperent" Color="#FF999999" Opacity="0"/>
-        <FontFamily x:Key="Digit.TextBox.FontFamily">Segoe UI Black</FontFamily>
+        <FontFamily x:Key="Digit.TextBox.FontFamily">Calibri</FontFamily>
         <System:Double x:Key="Digit.TextBox.FontSize">24</System:Double>
 
     </UserControl.Resources>
@@ -28,15 +28,27 @@
                  Foreground="{DynamicResource Digit.Text.Brush}" 
                  Focusable="False" 
                  SnapsToDevicePixels="True"
-                 Text="{Binding Mask, ElementName=userControl}" />
-        
+                 Text="{Binding Mask, ElementName=userControl}" 
+                 Validation.Error="LAYER_Mask_Error">
+            
+        </TextBox>
+
         <TextBox x:Name="LAYER_Text" 
                  FontFamily="{DynamicResource Digit.TextBox.FontFamily}" 
                  FontSize="24" 
                  Background="{DynamicResource Digit.Border.Brush.Transperent}"
                  TextChanged="LAYER_Text_TextChanged"
+                 GotFocus="LAYER_Text_GotFocus"
+                 LostFocus="LAYER_Text_LostFocus"
                  Focusable="True"
-                 SnapsToDevicePixels="True"
-                 Text="{Binding Text, ElementName=userControl}" />
+                 SnapsToDevicePixels="True">
+            <TextBox.Text>
+                <Binding Path="Mask">
+                    <Binding.ValidationRules>
+                        <ExceptionValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
     </Grid>
 </UserControl>
